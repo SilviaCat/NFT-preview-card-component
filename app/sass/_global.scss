@@ -36,6 +36,7 @@
                 margin-bottom: 30px;
                 border-radius: 10px;
                 position: relative;
+                cursor: pointer;
                 @media screen and (min-width: 375px) {
                     width: 303px;
                     height: 303px;
@@ -43,39 +44,35 @@
                 img {
                     width: 100%;
                 }
-                &:before {
-                    content: "";
-                    transition: all 300ms ease-in-out;
+                &:hover::after {
+                    opacity: 1;
                 }
-                &:hover {
-                    cursor: pointer;
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        background-color: rgba(0, 255, 247, 0.5);
-                    }
+                &:hover::before {
+                    opacity: 1;
                 }
-                .image__view {
+                &:after {
+                    transition: 150ms all ease-in-out;
+                    background-color: rgba(0, 255, 247, 0.5);
+                    content: '';
+                    display: block;
+                    opacity: 0;
                     position: absolute;
                     top: 0;
-                    right: 0;
-                    bottom: 0;
                     left: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    opacity: 0;
-                    transition: opacity 150ms ease-in-out;
-                    img {
-                        width: 45px;
-                    }
+                    width: 100%;
+                    height: 100%;
+                    z-index: 99;
                 }
-                .vedi {
-                    opacity: 1;
+                &:before {
+                    transition: 200ms all ease-in-out;
+                    content: url(../../images/icon-view.svg);
+                    opacity: 0;
+                    position: absolute;
+                    top: calc(50% - 24px);
+                    left: calc(50% - 24px);
+                    width: 48px;
+                    height: 48px;
+                    z-index: 100;
                 }
             }
             &__text {

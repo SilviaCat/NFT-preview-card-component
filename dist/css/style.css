@@ -52,6 +52,7 @@ body {
   margin-bottom: 30px;
   border-radius: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 375px) {
@@ -65,52 +66,40 @@ body {
   width: 100%;
 }
 
-.container .card__image:before {
-  content: "";
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-.container .card__image:hover {
-  cursor: pointer;
-}
-
-.container .card__image:hover:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 255, 247, 0.5);
-}
-
-.container .card__image .image__view {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  opacity: 0;
-  -webkit-transition: opacity 150ms ease-in-out;
-  transition: opacity 150ms ease-in-out;
-}
-
-.container .card__image .image__view img {
-  width: 45px;
-}
-
-.container .card__image .vedi {
+.container .card__image:hover::after {
   opacity: 1;
+}
+
+.container .card__image:hover::before {
+  opacity: 1;
+}
+
+.container .card__image:after {
+  -webkit-transition: 150ms all ease-in-out;
+  transition: 150ms all ease-in-out;
+  background-color: rgba(0, 255, 247, 0.5);
+  content: '';
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.container .card__image:before {
+  -webkit-transition: 200ms all ease-in-out;
+  transition: 200ms all ease-in-out;
+  content: url(../../images/icon-view.svg);
+  opacity: 0;
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  z-index: 100;
 }
 
 .container .card__text .title a {
