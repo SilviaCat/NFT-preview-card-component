@@ -1,0 +1,170 @@
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 100%;
+    }
+    
+    body {
+        font-size: 18px;
+        font-family: 'Outfit', sans-serif;
+        background-color: $veryDarkBlueBg;
+    }
+    
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card {
+            width: 325px;
+            background-color: $veryDarkBlueCard;
+            border-radius: 15px;
+            padding-right: 24px;
+            padding-left: 24px;
+            padding-top: 24px;
+            padding-bottom: 32px;
+            @media screen and (min-width: 375px) {
+                width: 350px;
+            }
+            &__image {
+                width: 276px;
+                height: 276px;
+                overflow: hidden;
+                border-radius: 10px;
+                margin-bottom: 30px;
+                border-radius: 10px;
+                position: relative;
+                @media screen and (min-width: 375px) {
+                    width: 303px;
+                    height: 303px;
+                }
+                img {
+                    width: 100%;
+                }
+                &:before {
+                    content: "";
+                    transition: all 300ms ease-in-out;
+                }
+                &:hover {
+                    cursor: pointer;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: rgba(0, 255, 247, 0.5);
+                    }
+                }
+                .image__view {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0;
+                    transition: opacity 150ms ease-in-out;
+                    img {
+                        width: 45px;
+                    }
+                }
+                .vedi {
+                    opacity: 1;
+                }
+            }
+            &__text {
+                .title {
+                    a {
+                        cursor: pointer;
+                        color: $white;
+                        text-decoration: none;
+                        font-weight: 600;
+                        transition: color 300ms ease-in-out;
+                        &:hover {
+                            color: $cyan;
+                        }
+                    }
+                }
+                .description {
+                    color: $sofBlue;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 22px;
+                    letter-spacing: 0.3px;
+                    margin-top: 21px;
+                    margin-bottom: 21px;
+                    @media screen and (min-width: 375px) {
+                        margin-top: 23px;
+                        margin-bottom: 23px;
+                    }
+                }
+                .prezzo {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 15px;
+                    letter-spacing: 0.4px;
+                    .costo {
+                        img {
+                            padding-right: 6px;
+                        }
+                        display: flex;
+                        align-items: center;
+                        text-transform: uppercase;
+                        color: $cyan;
+                        font-weight: 600;
+                    }
+                    .time {
+                        img {
+                            padding-right: 9px;
+                        }
+                        display: flex;
+                        align-items: center;
+                        color: $sofBlue;
+                    }
+                }
+            }
+            &__riga {
+                width: 100%;
+                height: 1px;
+                background-color: $veryDarkBlueLine;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                @media screen and (min-width: 375px) {
+                    margin-top: 24px;
+                    margin-bottom: 16px;
+                }
+            }
+            &__creator {
+                display: flex;
+                align-items: center;
+                img {
+                    width: 35px;
+                    height: 35px;
+                    background-size: cover;
+                    border: 1px solid $white;
+                    border-radius: 50%;
+                    margin-right: 11px;
+                }
+                p {
+                    font-size: 14px;
+                    color: $sofBlue;
+                    font-weight: 300;
+                    a {
+                        cursor: pointer;
+                        text-decoration: none;
+                        transition: color 300ms ease-in-out;
+                        color: $sofBlue;
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }

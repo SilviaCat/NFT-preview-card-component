@@ -1,0 +1,236 @@
+/* ### Primary */
+/* ### Neutral */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+  background-color: #0d192b;
+}
+
+.container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .card {
+  width: 325px;
+  background-color: #14253d;
+  border-radius: 15px;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+@media screen and (min-width: 375px) {
+  .container .card {
+    width: 350px;
+  }
+}
+
+.container .card__image {
+  width: 276px;
+  height: 276px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  position: relative;
+}
+
+@media screen and (min-width: 375px) {
+  .container .card__image {
+    width: 303px;
+    height: 303px;
+  }
+}
+
+.container .card__image img {
+  width: 100%;
+}
+
+.container .card__image:before {
+  content: "";
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.container .card__image:hover {
+  cursor: pointer;
+}
+
+.container .card__image:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 255, 247, 0.5);
+}
+
+.container .card__image .image__view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+
+.container .card__image .image__view img {
+  width: 45px;
+}
+
+.container .card__image .vedi {
+  opacity: 1;
+}
+
+.container .card__text .title a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+}
+
+.container .card__text .title a:hover {
+  color: #00fff7;
+}
+
+.container .card__text .description {
+  color: #8bacda;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.3px;
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+@media screen and (min-width: 375px) {
+  .container .card__text .description {
+    margin-top: 23px;
+    margin-bottom: 23px;
+  }
+}
+
+.container .card__text .prezzo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+}
+
+.container .card__text .prezzo .costo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  color: #00fff7;
+  font-weight: 600;
+}
+
+.container .card__text .prezzo .costo img {
+  padding-right: 6px;
+}
+
+.container .card__text .prezzo .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #8bacda;
+}
+
+.container .card__text .prezzo .time img {
+  padding-right: 9px;
+}
+
+.container .card__riga {
+  width: 100%;
+  height: 1px;
+  background-color: #2f415b;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 375px) {
+  .container .card__riga {
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.container .card__creator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .card__creator img {
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 11px;
+}
+
+.container .card__creator p {
+  font-size: 14px;
+  color: #8bacda;
+  font-weight: 300;
+}
+
+.container .card__creator p a {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+  color: #8bacda;
+}
+
+.container .card__creator p a:hover {
+  color: white;
+}
